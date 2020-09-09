@@ -10,7 +10,7 @@ function Banner() {
       const request = await axios.get(requests.fetchNetflixOrignals);
       console.log(request.data.results);
       setMovie(
-        request.data.results[17] //Math.floor(Math.random() * request.data.results.length - 1);
+        request.data.results[17] //Math.floor(Math.random() * request.data.results.length - 1);//!Issue Random movie is not working, it is for 17
       );
       return request;
     }
