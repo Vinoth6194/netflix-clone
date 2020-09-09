@@ -12,13 +12,16 @@ function Banner() {
       const request = await axios.get(requests.fetchNetflixOrignals);
       console.log(request.data.results);
       setMovie(
-        request.data.results[17] //Math.floor(Math.random() * request.data.results.length - 1);//!Issue Random movie is not working, it is for 17
+        request.data.results[5] //Math.floor(Math.random() * request.data.results.length - 1);//!Issue Random movie is not working, it is for 17
       );
       return request;
     }
     fetchData();
   }, []);
   console.log(movie);
+  function truncate(str, n) {
+    return str?.length > n ? str.substr(0, n - 1) + "..." : str;
+  }
   return (
     <header
       className="banner"
@@ -41,7 +44,9 @@ function Banner() {
           <button className="banner__button">Play</button>
           <button className="banner__button">My List</button>
         </div>
-        <h1 className="banner__description">{movie?.overview}</h1>
+        <h1 className="banner__description">
+          {truncate(movie?.overview, 150)}
+        </h1>
       </div>
     </header>
   );
