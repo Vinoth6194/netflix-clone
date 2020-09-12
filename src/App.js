@@ -3,11 +3,13 @@ import "./App.css";
 import Row from "./Row";
 import requests from "./requests";
 import Banner from "./Banner";
+import Nav from "./Nav.js";
 
 function App() {
   return (
     <div className="app">
       {/* <h1>Vin_Netflix Clone</h1> */}
+      <Nav></Nav>
       <Banner />
       <Row
         title="NETFLIX ORIGINALS"
